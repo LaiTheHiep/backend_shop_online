@@ -1,3 +1,6 @@
+exports.hostname = '127.0.0.1';
+exports.port = process.env.PORT || '8080';
+
 // mongo
 const url = 'mongodb://localhost:27017/';
 const db_name = 'shop_online';

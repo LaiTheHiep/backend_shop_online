@@ -54,9 +54,8 @@ module.exports = {
   createToken(obj) {
     let token = jwt.sign(
       {
-        account: obj.account,
+        email: obj.email,
         role: obj.role,
-        companyId: obj.companyId,
         time: Date.now()
       },
       env.PRIVATE_KEY,
@@ -78,7 +77,7 @@ module.exports = {
 
     var userSchema = require('./models/users.model');
     this.connect();
-    var data = await userSchema.findOne({ account: _userToken.account, role: _userToken.role });
+    var data = await userSchema.findOne({ email: _userToken.email, role: _userToken.role });
     if (!data) {
       return {
         errorName: '404',

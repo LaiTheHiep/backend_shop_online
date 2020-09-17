@@ -81,7 +81,7 @@ module.exports = {
     app.post(_link, (req, res) => {
       var query = req.body;
       Utils.connect();
-      objectSchema.findOne({ account: query.account, password: query.password }, (err, data) => {
+      objectSchema.findOne({ email: query.email, password: query.password }, (err, data) => {
         if (err) {
           res.send({
             total: 0,
@@ -116,7 +116,6 @@ module.exports = {
   register(app, _link) {
     app.post(_link, (req, res) => {
       var query = req.body;
-      query['companyId'] = 'register';
       query['role'] = 'user';
       Utils.connect();
       objectSchema.create(query).then((data) => {
