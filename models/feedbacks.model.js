@@ -8,12 +8,6 @@ const feedbackSchema = mongoose.Schema({
   message: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
-}, {
-  writeConcern: {
-    w: 'majority',
-    j: true,
-    wtimeout: 1000
-  }
 });
 
 module.exports = mongoose.model(env.db_collection.feedbacks, feedbackSchema);

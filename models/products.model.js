@@ -5,6 +5,7 @@ const productSchema = mongoose.Schema({
   name: { type: String, unique: true, required: true },
   description: { type: String },
   information: { type: String },
+  image: { type: String },
   cost: { type: Number, required: true },
   rate: { type: Number },
   discount: { type: Number },
@@ -13,12 +14,6 @@ const productSchema = mongoose.Schema({
   brandId: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
-}, {
-  writeConcern: {
-    w: 'majority',
-    j: true,
-    wtimeout: 1000
-  }
 });
 
 module.exports = mongoose.model(env.db_collection.products, productSchema);
