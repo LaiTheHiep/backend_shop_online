@@ -37,7 +37,8 @@ module.exports = {
         if (req.body.productId) {
           const processedFile = req.file || {};
           const fullPathInServer = processedFile.path;
-          const newFullPath = `${_rootFolder}\\${req.body.productId}`;
+          let orgName = processedFile.originalname || '';
+          const newFullPath = `${_rootFolder}\\${req.body.productId}_${orgName}`;
           fs.renameSync(fullPathInServer, newFullPath);
           let query = { image: newFullPath };
           ObjectSchema.update({ _id: req.body.productId }, { $set: { ...query } }).exec((err, data) => {

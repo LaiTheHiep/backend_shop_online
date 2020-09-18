@@ -32,7 +32,7 @@ Utils.delete(app, user, user_link);
 Utils.getTotal(app, user, `${user_link}-total`);
 
 const brand = require('./models/brands.model');
-const brand_link = `'/${env.db_collection.brands}`;
+const brand_link = `/${env.db_collection.brands}`;
 Utils.get(app, brand, brand_link);
 Utils.post(app, brand, brand_link);
 Utils.put(app, brand, brand_link);
@@ -40,7 +40,7 @@ Utils.delete(app, brand, brand_link);
 Utils.getTotal(app, brand, `${brand_link}-total`);
 
 const category = require('./models/categories.model');
-const category_link = `'/${env.db_collection.categories}`;
+const category_link = `/${env.db_collection.categories}`;
 Utils.get(app, category, category_link);
 Utils.post(app, category, category_link);
 Utils.put(app, category, category_link);
@@ -48,7 +48,7 @@ Utils.delete(app, category, category_link);
 Utils.getTotal(app, category, `${category_link}-total`);
 
 const feedback = require('./models/feedbacks.model');
-const feedback_link = `'/${env.db_collection.feedbacks}`;
+const feedback_link = `/${env.db_collection.feedbacks}`;
 Utils.get(app, feedback, feedback_link);
 Utils.post(app, feedback, feedback_link);
 Utils.put(app, feedback, feedback_link);
@@ -56,7 +56,7 @@ Utils.delete(app, feedback, feedback_link);
 Utils.getTotal(app, feedback, `${feedback_link}-total`);
 
 const type = require('./models/types.model');
-const type_link = `'/${env.db_collection.types}`;
+const type_link = `/${env.db_collection.types}`;
 Utils.get(app, type, type_link);
 Utils.post(app, type, type_link);
 Utils.put(app, type, type_link);
@@ -64,7 +64,7 @@ Utils.delete(app, type, type_link);
 Utils.getTotal(app, type, `${type_link}-total`);
 
 const product = require('./models/products.model');
-const product_link = `'/${env.db_collection.products}`;
+const product_link = `/${env.db_collection.products}`;
 Utils.get(app, product, product_link);
 Utils.post(app, product, product_link);
 Utils.put(app, product, product_link);
