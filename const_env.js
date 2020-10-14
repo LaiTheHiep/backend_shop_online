@@ -19,7 +19,8 @@ exports.db_collection = {
   types: 'types',
   brands: 'brands',
   products: 'products',
-  feedbacks: 'feedbacks'
+  feedbacks: 'feedbacks',
+  checkouts: 'checkouts'
 };
 
 // limit get list data

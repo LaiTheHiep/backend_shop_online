@@ -74,6 +74,11 @@ Utils.getTotal(app, product, `${product_link}-total`);
 const product_api = require('./api/product.api');
 product_api.uploadImage(app);
 
+const checkout = require('./models/checkout.model');
+const checkout_link = `/${env.db_collection.checkouts}`;
+Utils.get(app, checkout, checkout_link);
+Utils.post(app, checkout, checkout_link);
+
 // Start the server
 const server = app.listen(port, (error) => {
   if (error) {
