@@ -78,6 +78,8 @@ const checkout = require('./models/checkout.model');
 const checkout_link = `/${env.db_collection.checkouts}`;
 Utils.get(app, checkout, checkout_link);
 Utils.post(app, checkout, checkout_link);
+Utils.put(app, checkout, checkout_link);
+Utils.delete(app, checkout, checkout_link);
 
 // Start the server
 const server = app.listen(port, (error) => {
